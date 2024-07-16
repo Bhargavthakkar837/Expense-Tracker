@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/appNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Expense Tracker"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <!-- Expense Name EditText -->
+    <EditText
+        android:id="@+id/expenseNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appNameTextView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:hint="Expense Name"
+        android:inputType="text"
+        android:padding="16dp" />
+
+    <!-- Category Spinner -->
+    <LinearLayout
+        android:id="@+id/categorySpinnerLayout"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseNameEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp">
+
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/categories" />
+
+    </LinearLayout>
+
+    <!-- Account Type Spinner -->
+    <LinearLayout
+        android:id="@+id/accountTypeSpinnerLayout"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseNameEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/categorySpinnerLayout"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp">
+
+        <Spinner
+            android:id="@+id/accountTypeSpinner"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/account_types"
+            android:prompt="@string/select_account_type" />
+    </LinearLayout>
+
+    <!-- Amount EditText -->
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountTypeSpinnerLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:hint="Amount"
+        android:inputType="numberDecimal"
+        android:padding="16dp" />
+
+    <!-- Add Expense Button -->
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amountEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Add Expense"
+        android:onClick="onAddExpenseClicked" />
+
+    <!-- ScrollView for Expenses -->
+    <ScrollView
+        android:id="@+id/expensesScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_below="@id/addButton"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/expensesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+
+    </ScrollView>
+
+</RelativeLayout>

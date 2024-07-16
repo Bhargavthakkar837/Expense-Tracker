@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Telephone Bill</item>
+        <item>Fuel Expense</item>
+        <item>Entertainment</item>
+    </string-array>
+
+    <string-array name="account_types">
+        <item>Card</item>
+        <item>Cash</item>
+    </string-array>
+</resources>
